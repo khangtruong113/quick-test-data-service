@@ -1,0 +1,45 @@
+{
+    "so_dv_hc_kv_hc": {
+        "data": [
+            {
+                "hai_dao": "14",
+                "kinh_te_dac_biet": "15",
+                "thong_tin": "Thành phố Quy Nhơn",
+                "nong_thon": "12",
+                "group_code": "A001",
+                "phan_cap": "1",
+                "thong_tin_phan_cap_tren": null,
+                "nam": "2021",
+                "ma_dv_hc": "52",
+                "do_thi": "13",
+                "ten_dv_hc": "Tỉnh Bình Định"
+            },
+            {
+                "hai_dao": "3",
+                "kinh_te_dac_biet": "6",
+                "thong_tin": "Tổng số cấp huyện",
+                "nong_thon": "8",
+                "group_code": "A001",
+                "phan_cap": "1",
+                "thong_tin_phan_cap_tren": null,
+                "nam": "2021",
+                "ma_dv_hc": "52",
+                "do_thi": "12",
+                "ten_dv_hc": "Tỉnh Bình Định"
+            },
+            {
+                "hai_dao": "4",
+                "kinh_te_dac_biet": "8",
+                "thong_tin": "Tổng số cấp xã",
+                "nong_thon": "14",
+                "group_code": "A001",
+                "phan_cap": "1",
+                "thong_tin_phan_cap_tren": null,
+                "nam": "2021",
+                "ma_dv_hc": "52",
+                "do_thi": "17",
+                "ten_dv_hc": "Tỉnh Bình Định"
+            }
+        ]
+    }
+}
