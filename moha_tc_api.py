@@ -136,10 +136,10 @@ def full_valid_check(response_data, object_res_name, data_key_res_name, argument
             logging.error(f"group_code not matched. Expected: [{group_code}], Actual: [{element['group_code']}]")
             return False
         if element['ma_dv_hc'] != ma_dv_hc:
-            logging.error(f"ma_dv_hc not matched. Expected: [{group_code}], Actual: [{element['group_code']}]")
+            logging.error(f"ma_dv_hc not matched. Expected: [{ma_dv_hc}], Actual: [{element['ma_dv_hc']}]")
             return False
         if element[date_key] != ky_du_lieu:
-            logging.error(f"ky_du_lieu not matched. Expected: [{group_code}], Actual: [{element['group_code']}]")
+            logging.error(f"ky_du_lieu not matched. Expected: [{ky_du_lieu}], Actual: [{element[date_key]}]")
             return False
     logging.info("[FULL_VALID_CHECK] All Matched. PASSED")
     return True
@@ -147,14 +147,10 @@ def full_valid_check(response_data, object_res_name, data_key_res_name, argument
 def required_valid_check(response_data, object_res_name, data_key_res_name, arguments):
     logging.info("Required Valid Checking.")
     group_code = arguments.group_code
-    ma_dv_hc = arguments.ma_dv_hc
-    logging.info(f"group_code = [{group_code}], ma_dv_hc = [{ma_dv_hc}]")
+    logging.info(f"group_code = [{group_code}]")
     for element in response_data[object_res_name][data_key_res_name]:
         if element['group_code'] != group_code:
             logging.error(f"group_code not matched. Expected: [{group_code}], Actual: [{element['group_code']}]")
-            return False
-        if element['ma_dv_hc'] != ma_dv_hc:
-            logging.error(f"ma_dv_hc not matched. Expected: [{group_code}], Actual: [{element['group_code']}]")
             return False
     logging.info("[REQUIRED_VALID_CHECK] All Matched. PASSED")
     return True
@@ -168,7 +164,7 @@ if __name__ == '__main__':
     parser.add_argument('--uc', required=True, help='Use Case Index')
     parser.add_argument('--option', required=True, help='Option Check: full_param, only_required_param')
     parser.add_argument('--group_code', required=True, help='group_code')
-    parser.add_argument('--ma_dv_hc', required=True, help='ma_dv_hc')
+    parser.add_argument('--ma_dv_hc', required=False, help='ma_dv_hc')
     parser.add_argument('--ky_du_lieu', required=False, help='ky_du_lieu')
     parser.add_argument('--date_key', required=False, help='Lay theo nam hoac nhiem_ky')
 
@@ -181,6 +177,7 @@ if __name__ == '__main__':
     args: argparse.Namespace = parser.parse_args()
     uc = args.uc
     option = args.option
+    logging.info("------------TEST-CASE-DATA-SERVICE------------")
     logging.info(f"Input: UC_NAME={uc},CHECK_OPTION={option}")
     accepted_params = ('full', 'required')
     if option not in accepted_params:
